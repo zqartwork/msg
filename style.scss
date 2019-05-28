@@ -1,0 +1,355 @@
+// --------------main
+
+$theme-color: #a30202;
+$hint: #afafaf;
+
+body {
+  font-family: 微軟正黑體;
+}
+
+.icon-bubbles4:before {
+  content: "\e970";
+}
+
+.header-child-icon-function,
+#chat-icon > a {
+  color: #424242;
+  margin-right: 5px;
+}
+
+#msg::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  background-color: #cccccc;
+}
+
+#msg::-webkit-scrollbar {
+  width: 3px;
+  background-color: #f4f4f4;
+}
+
+#msg::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $hint;
+}
+
+// 用戶名單列
+.user-content {
+  width: calc(100% - 220px);
+  height: 100%;
+
+  top: 90px;
+  left: 260px;
+  position: absolute;
+  display: flex;
+  background: #fff;
+
+  .msg-user-list {
+    // border: 1px solid red;
+    // position: fixed;
+    max-height: 880px;
+    font-family: 微軟正黑體;
+
+    position: relative;
+
+    .user-column {
+      width: 100%;
+      min-width: 352px;
+      height: 100%;
+      max-height: calc(85vh - 70px);
+
+      overflow-y: scroll;
+      border: 1px solid $hint;
+
+      margin: 0;
+      a {
+        color: #000;
+      }
+      .searchbar {
+        width: 100%;
+        background: $theme-color;
+        padding: 15px 0;
+
+        .searchbox {
+          margin: 0 auto;
+          width: 90%;
+          height: 35px;
+          background: #fff;
+          border-radius: 35px;
+          position: relative;
+          overflow: hidden;
+
+          .search-input {
+            display: block;
+            border: none;
+            margin: 0 auto;
+            height: 100%;
+            outline: none;
+            font-size: 16px;
+            width: 90%;
+            font-family: 微軟正黑體;
+          }
+
+          i {
+            position: absolute;
+            right: 15px;
+            top: 9px;
+          }
+        }
+      }
+      .user-thumb {
+        height: 96px;
+        border-bottom: 1px solid $hint;
+
+        position: relative;
+
+        &.unread {
+          font-weight: bold;
+        }
+
+        &.active {
+          background: #d6d6d6;
+
+          &:hover {
+            background: #d6d6d6;
+          }
+        }
+
+        &:hover {
+          background: #e6e6e6;
+        }
+
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+
+        .avatar {
+          flex: 0.2;
+          height: 56px;
+          width: 56px;
+
+          margin: 0 17px;
+
+          img {
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+
+        .user-text-content {
+          flex: 0.8;
+          font-size: 16px;
+          line-height: 24px;
+
+          .user-txt-des {
+            color: #424242;
+            max-width: 230px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+
+        .notice-tag {
+          background: $theme-color;
+          position: absolute;
+          top: 16px;
+          right: 15px;
+
+          height: 25px;
+          width: 25px;
+
+          border-radius: 50%;
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .chat-wrapper {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid $hint;
+    height: 100%;
+    max-height: calc(85vh - 70px);
+
+    position: relative;
+    overflow: hidden;
+
+    .chat-room-title {
+      // border: 1px solid red;
+      font-family: 微軟正黑體;
+
+      width: 100%;
+      height: 63px;
+      background: #222222;
+
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 63px;
+    }
+
+    .chat {
+      padding-top: 10px;
+      .datebox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .date {
+          background: #e6e6e6;
+          padding: 10px 20px;
+          border-radius: 3px;
+        }
+      }
+      .otbox {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 15px 0;
+
+        .otcont {
+          display: flex;
+          flex-wrap: wrap;
+          .avat {
+            height: 50px;
+            width: 50px;
+            margin: 15px;
+            img {
+              height: 100%;
+            }
+          }
+          .cloud {
+            &.continue {
+              margin-top: 5px;
+              padding-left: 80px;
+              .txt::after {
+                display: none;
+              }
+            }
+            .name {
+              color: $hint;
+              font-size: 14px;
+              line-height: 25px;
+            }
+            .txt {
+              border: 1px solid #707070;
+              border-radius: 5px;
+              padding: 12px 15px;
+              line-height: 21px;
+              position: relative;
+
+              &::after {
+                content: "";
+                position: absolute;
+                height: 13px;
+                width: 13px;
+                top: 10px;
+                left: -8px;
+                transform: rotate(-45deg);
+                background: #fff;
+
+                border-top: 1px solid #707070;
+                border-left: 1px solid #707070;
+              }
+            }
+            .time {
+              padding: 5px 0;
+              font-size: 14px;
+              color: $hint;
+              text-align: right;
+            }
+          }
+        }
+      }
+      .mybox {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+
+        .txt {
+          margin-right: 20px;
+
+          border: 1px solid #707070;
+          border-radius: 5px;
+          padding: 12px 15px;
+          line-height: 21px;
+          position: relative;
+          background: #e6e6e6;
+
+          &::after {
+            content: "";
+            position: absolute;
+            height: 13px;
+            width: 13px;
+            top: 12px;
+            right: -8px;
+            transform: rotate(135deg);
+            background: #e6e6e6;
+
+            border-top: 1px solid #707070;
+            border-left: 1px solid #707070;
+          }
+        }
+        .time {
+          padding: 5px 0;
+          font-size: 14px;
+          color: $hint;
+          text-align: left;
+        }
+      }
+    }
+
+    .user-txt-input {
+      position: absolute;
+      bottom: 0;
+
+      font-family: 微軟正黑體;
+
+      width: 100%;
+      background: #222222;
+
+      padding: 15px 20px;
+      display: flex;
+
+      input {
+        border: none;
+        height: 35px;
+        font-size: 16px;
+        border-radius: 35px 0 0 35px;
+        padding-left: 15px;
+        font-family: 微軟正黑體;
+        outline: none;
+
+        flex: 0.74;
+      }
+      .submit-txt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 38px;
+        font-size: 16px;
+        border-radius: 0 35px 35px 0;
+        margin-left: 10px;
+
+        background: $theme-color;
+        flex: 0.2;
+
+        color: white;
+      }
+    }
+  }
+}
