@@ -64,10 +64,14 @@ body {
           border-radius: 35px;
           position: relative;
           overflow: hidden; }
+          .wrapper .flex-wrapper .inner-container .searchbar .searchbox.sm {
+            display: none;
+            cursor: pointer; }
           .wrapper .flex-wrapper .inner-container .searchbar .searchbox .search-input {
             display: block;
             border: none;
             margin: 0 auto;
+            padding-top: 9px;
             height: 100%;
             outline: none;
             font-size: 16px;
@@ -77,6 +81,8 @@ body {
             position: absolute;
             right: 15px;
             top: 9px; }
+            .wrapper .flex-wrapper .inner-container .searchbar .searchbox i.fa-times {
+              display: none; }
       .wrapper .flex-wrapper .inner-container .user-column {
         width: 100%;
         height: 100%;
@@ -331,12 +337,14 @@ body {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex; }
-        .wrapper .flex-wrapper .inner-container .user-txt-input input {
+        .wrapper .flex-wrapper .inner-container .user-txt-input .input {
+          background: #fff;
           border: none;
-          height: 35px;
+          height: unset;
           font-size: 16px;
           border-radius: 35px 0 0 35px;
           padding-left: 15px;
+          padding-top: 9px;
           font-family: 微軟正黑體;
           outline: none;
           -webkit-box-flex: 0.74;
@@ -352,7 +360,7 @@ body {
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center;
-          height: 38px;
+          height: 35px;
           font-size: 16px;
           border-radius: 0 35px 35px 0;
           margin-left: 10px;
@@ -382,13 +390,50 @@ body {
   .wrapper .flex-wrapper .inner-container .user-column .column-wrapper .user-thumb .user-text-content {
     display: none; }
   .wrapper .flex-wrapper .inner-container .searchbar .searchbox {
-    background: #a30202; }
-    .wrapper .flex-wrapper .inner-container .searchbar .searchbox .search-input {
-      display: none; }
-    .wrapper .flex-wrapper .inner-container .searchbar .searchbox i {
+    display: none; }
+  .wrapper .flex-wrapper .inner-container .searchbar .searchbox.sm {
+    display: block;
+    background: #a30202;
+    height: 35px;
+    position: relative; }
+    .wrapper .flex-wrapper .inner-container .searchbar .searchbox.sm .search-input {
+      width: 0px;
+      overflow: hidden; }
+    .wrapper .flex-wrapper .inner-container .searchbar .searchbox.sm i {
       color: white;
       top: calc(50% - 8px);
-      right: calc(50% - 8px); } }
+      right: calc(50% - 8px); }
+  .wrapper .flex-wrapper .inner-container.show {
+    overflow: unset;
+    top: -5px; }
+    .wrapper .flex-wrapper .inner-container.show .searchbar {
+      width: 220%;
+      position: absolute;
+      z-index: 5; }
+      .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm {
+        margin: 5px auto;
+        width: 90%;
+        height: 30px;
+        background: #fff;
+        border-radius: 35px;
+        position: relative;
+        overflow: hidden;
+        cursor: auto; }
+        .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm .search-input {
+          display: unset;
+          position: absolute;
+          padding: 8px 0 0 15px;
+          height: 35px;
+          width: 100%;
+          background: #fff; }
+        .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm i {
+          top: 9px;
+          right: 15px;
+          color: #424242; }
+          .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm i.fa-search {
+            display: none; }
+          .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm i.fa-times {
+            display: initial; } }
 
 @media (max-width: 980px) {
   .wrapper {
@@ -399,3 +444,8 @@ body {
   .wrapper {
     padding: 0px;
     height: calc(100vh - 50px); } }
+
+[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  display: block;
+  /* For Firefox */ }

@@ -12,7 +12,7 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/2c151243a2/UntitledProject/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- 主要新增的CSS -->
     <link rel="stylesheet" href="msg.css">
 </head>
@@ -205,11 +205,19 @@
                 <div class="inner-container">
                     <div class="searchbar">
                         <div class="searchbox">
-                            <input type="text" class="search-input" placeholder="請輸入尋找關鍵字">
+                            <div class="search-input" contenteditable='true' placeholder="請輸入關鍵字"></div>
                             <i class="fas fa-search"></i>
                         </div>
+                        <div class="searchbox sm ">
+                            <div class="search-input" contenteditable='true' placeholder="請輸入關鍵字"></div>
+                            <a id="search-open-trigger">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a id="close-trigger">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </div>
                     </div>
-
                     <div class="user-column" id="msg">
                         <div class="column-wrapper">
                             <a href="">
@@ -449,7 +457,7 @@
                         </div>
                     </div>
                     <div class="user-txt-input">
-                        <input type="text" placeholder="請輸入訊息內容">
+                        <div class="input" contenteditable='true' placeholder="請輸入訊息"></div>
                         <a href="" class="submit-txt">發送訊息</a>
                     </div>
                 </div>
@@ -459,7 +467,16 @@
         </div>
 
     </div>
-
+    <script>
+        $(document).ready(function () {
+            $('#search-open-trigger').click(function () {
+                $(this).parents('.inner-container').addClass('show');
+            });
+            $('#close-trigger').click(function () {
+                $(this).parents('.inner-container').removeClass('show');
+            })
+        });
+    </script>
 </body>
 
 </html>

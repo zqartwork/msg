@@ -78,10 +78,16 @@ body {
           position: relative;
           overflow: hidden;
 
+          &.sm {
+            display: none;
+            cursor: pointer;
+          }
+
           .search-input {
             display: block;
             border: none;
             margin: 0 auto;
+            padding-top: 9px;
             height: 100%;
             outline: none;
             font-size: 16px;
@@ -93,6 +99,10 @@ body {
             position: absolute;
             right: 15px;
             top: 9px;
+
+            &.fa-times {
+              display: none;
+            }
           }
         }
       }
@@ -382,12 +392,14 @@ body {
         padding: 15px 20px;
         display: flex;
 
-        input {
+        .input {
+          background: #fff;
           border: none;
-          height: 35px;
+          height: unset;
           font-size: 16px;
           border-radius: 35px 0 0 35px;
           padding-left: 15px;
+          padding-top: 9px;
           font-family: 微軟正黑體;
           outline: none;
 
@@ -398,7 +410,7 @@ body {
           align-items: center;
           justify-content: center;
 
-          height: 38px;
+          height: 35px;
           font-size: 16px;
           border-radius: 0 35px 35px 0;
           margin-left: 10px;
@@ -436,14 +448,67 @@ body {
     display: none;
   }
   .wrapper .flex-wrapper .inner-container .searchbar .searchbox {
+    display: none;
+  }
+  .wrapper .flex-wrapper .inner-container .searchbar .searchbox.sm {
+    display: block;
     background: $theme-color;
+    height: 35px;
+    position: relative;
+
     .search-input {
-      display: none;
+      width: 0px;
+      overflow: hidden;
     }
     i {
       color: white;
       top: calc(50% - 8px);
       right: calc(50% - 8px);
+    }
+  }
+  .wrapper .flex-wrapper .inner-container.show {
+    overflow: unset;
+    top: -5px;
+
+    .searchbar {
+      width: 220%;
+      position: absolute;
+      z-index: 5;
+
+      .searchbox.sm {
+        margin: 5px auto;
+        width: 90%;
+        height: 30px;
+        background: #fff;
+        border-radius: 35px;
+        position: relative;
+        overflow: hidden;
+
+        cursor: auto;
+
+        .search-input {
+          display: unset;
+          position: absolute;
+          padding: 8px 0 0 15px;
+          height: 35px;
+          width: 100%;
+          background: #fff;
+        }
+
+        i {
+          top: 9px;
+          right: 15px;
+          color: #424242;
+
+          &.fa-search {
+            display: none;
+          }
+
+          &.fa-times {
+            display: initial;
+          }
+        }
+      }
     }
   }
 }
@@ -460,4 +525,9 @@ body {
     padding: 0px;
     height: calc(100vh - 50px);
   }
+}
+
+[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  display: block; /* For Firefox */
 }
