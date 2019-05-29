@@ -30,8 +30,7 @@ body {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  background: #fff; }
+  display: flex; }
   .user-content .msg-user-list {
     max-height: 880px;
     font-family: 微軟正黑體;
@@ -43,13 +42,17 @@ body {
       max-height: calc(85vh - 70px);
       overflow-y: scroll;
       border: 1px solid #afafaf;
+      background: #fff;
       margin: 0; }
       .user-content .msg-user-list .user-column a {
         color: #000; }
       .user-content .msg-user-list .user-column .searchbar {
+        position: absolute;
+        top: 1;
+        z-index: 3;
         width: 100%;
         background: #a30202;
-        padding: 15px 0; }
+        padding: 14px 0; }
         .user-content .msg-user-list .user-column .searchbar .searchbox {
           margin: 0 auto;
           width: 90%;
@@ -71,71 +74,73 @@ body {
             position: absolute;
             right: 15px;
             top: 9px; }
-      .user-content .msg-user-list .user-column .user-thumb {
-        height: 96px;
-        border-bottom: 1px solid #afafaf;
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        width: 100%; }
-        .user-content .msg-user-list .user-column .user-thumb.unread {
-          font-weight: bold; }
-        .user-content .msg-user-list .user-column .user-thumb.active {
-          background: #d6d6d6; }
-          .user-content .msg-user-list .user-column .user-thumb.active:hover {
-            background: #d6d6d6; }
-        .user-content .msg-user-list .user-column .user-thumb:hover {
-          background: #e6e6e6; }
-        .user-content .msg-user-list .user-column .user-thumb .avatar {
-          -webkit-box-flex: 0.2;
-          -ms-flex: 0.2;
-          flex: 0.2;
-          height: 56px;
-          width: 56px;
-          margin: 0 17px; }
-          .user-content .msg-user-list .user-column .user-thumb .avatar img {
-            height: 100%;
-            border-radius: 50%; }
-        .user-content .msg-user-list .user-column .user-thumb .user-text-content {
-          -webkit-box-flex: 0.8;
-          -ms-flex: 0.8;
-          flex: 0.8;
-          font-size: 16px;
-          line-height: 24px; }
-          .user-content .msg-user-list .user-column .user-thumb .user-text-content .user-txt-des {
-            color: #424242;
-            max-width: 230px;
-            white-space: nowrap;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            overflow: hidden; }
-        .user-content .msg-user-list .user-column .user-thumb .notice-tag {
-          background: #a30202;
-          position: absolute;
-          top: 16px;
-          right: 15px;
-          height: 25px;
-          width: 25px;
-          border-radius: 50%;
-          color: #fff;
-          font-size: 14px;
-          font-weight: bold;
-          text-align: center;
+      .user-content .msg-user-list .user-column .column-wrapper {
+        padding-top: 63px; }
+        .user-content .msg-user-list .user-column .column-wrapper .user-thumb {
+          height: 96px;
+          border-bottom: 1px solid #afafaf;
+          position: relative;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          justify-content: center; }
+          -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+          width: 100%; }
+          .user-content .msg-user-list .user-column .column-wrapper .user-thumb.unread {
+            font-weight: bold; }
+          .user-content .msg-user-list .user-column .column-wrapper .user-thumb.active {
+            background: #d6d6d6; }
+            .user-content .msg-user-list .user-column .column-wrapper .user-thumb.active:hover {
+              background: #d6d6d6; }
+          .user-content .msg-user-list .user-column .column-wrapper .user-thumb:hover {
+            background: #e6e6e6; }
+          .user-content .msg-user-list .user-column .column-wrapper .user-thumb .avatar {
+            -webkit-box-flex: 0.2;
+            -ms-flex: 0.2;
+            flex: 0.2;
+            height: 56px;
+            width: 56px;
+            margin: 0 17px; }
+            .user-content .msg-user-list .user-column .column-wrapper .user-thumb .avatar img {
+              height: 100%;
+              border-radius: 50%; }
+          .user-content .msg-user-list .user-column .column-wrapper .user-thumb .user-text-content {
+            -webkit-box-flex: 0.8;
+            -ms-flex: 0.8;
+            flex: 0.8;
+            font-size: 16px;
+            line-height: 24px; }
+            .user-content .msg-user-list .user-column .column-wrapper .user-thumb .user-text-content .user-txt-des {
+              color: #424242;
+              max-width: 230px;
+              white-space: nowrap;
+              -o-text-overflow: ellipsis;
+              text-overflow: ellipsis;
+              overflow: hidden; }
+          .user-content .msg-user-list .user-column .column-wrapper .user-thumb .notice-tag {
+            background: #a30202;
+            position: absolute;
+            top: 16px;
+            right: 15px;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center; }
   .user-content .chat-wrapper {
     -webkit-box-flex: 0.8;
     -ms-flex: 0.8;
@@ -147,11 +152,14 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     border: 1px solid #afafaf;
     height: 100%;
     max-height: calc(85vh - 70px);
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    background: #fff; }
     .user-content .chat-wrapper .chat-room-title {
       font-family: 微軟正黑體;
       width: 100%;
@@ -183,6 +191,9 @@ body {
         display: -ms-flexbox;
         display: flex;
         width: 100%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 0%;
+        flex: 1 1 0%;
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
@@ -190,6 +201,12 @@ body {
         -ms-flex-align: center;
         align-items: center;
         margin: 15px 0; }
+        .user-content .chat-wrapper .chat .otbox.continue {
+          margin: 5px 0 15px 0; }
+          .user-content .chat-wrapper .chat .otbox.continue .cloud {
+            padding-left: 80px; }
+            .user-content .chat-wrapper .chat .otbox.continue .cloud .txt::after {
+              display: none; }
         .user-content .chat-wrapper .chat .otbox .otcont {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -203,7 +220,6 @@ body {
             .user-content .chat-wrapper .chat .otbox .otcont .avat img {
               height: 100%; }
           .user-content .chat-wrapper .chat .otbox .otcont .cloud.continue {
-            margin-top: 5px;
             padding-left: 80px; }
             .user-content .chat-wrapper .chat .otbox .otcont .cloud.continue .txt::after {
               display: none; }
