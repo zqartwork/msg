@@ -290,6 +290,8 @@ body {
             .otcont {
               display: flex;
               flex-wrap: nowrap;
+              max-width: 50%;
+
               .avat {
                 height: 50px;
                 width: 50px;
@@ -346,6 +348,10 @@ body {
             justify-content: flex-end;
             align-items: center;
 
+            .mycont {
+              max-width: 50%;
+            }
+
             .txt {
               margin-right: 20px;
 
@@ -396,6 +402,8 @@ body {
           background: #fff;
           border: none;
           height: unset;
+          max-height: 25px;
+          overflow: hidden;
           font-size: 16px;
           border-radius: 35px 0 0 35px;
           padding-left: 15px;
@@ -467,20 +475,21 @@ body {
     }
   }
   .wrapper .flex-wrapper .inner-container.show {
-    overflow: unset;
-    top: -5px;
+    overflow: hidden;
 
     .searchbar {
-      width: 220%;
-      position: absolute;
+      width: 30%;
+      position: fixed;
+      top: 90px;
       z-index: 5;
+      padding: 11.5px;
 
       .searchbox.sm {
         margin: 5px auto;
         width: 90%;
         height: 30px;
         background: #fff;
-        border-radius: 35px;
+        border-radius: 30px;
         position: relative;
         overflow: hidden;
 
@@ -490,7 +499,7 @@ body {
           display: unset;
           position: absolute;
           padding: 8px 0 0 15px;
-          height: 35px;
+          height: 30px;
           width: 100%;
           background: #fff;
         }
@@ -524,6 +533,10 @@ body {
   .wrapper {
     padding: 0px;
     height: calc(100vh - 50px);
+  }
+  .wrapper .flex-wrapper .inner-container.show .searchbar {
+    top: 50px;
+    width: 35%;
   }
 }
 

@@ -251,7 +251,8 @@ body {
               display: -ms-flexbox;
               display: flex;
               -ms-flex-wrap: nowrap;
-              flex-wrap: nowrap; }
+              flex-wrap: nowrap;
+              max-width: 50%; }
               .wrapper .flex-wrapper .inner-container .chat-wrapper .chat .otbox .otcont .avat {
                 height: 50px;
                 width: 50px;
@@ -301,6 +302,8 @@ body {
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center; }
+            .wrapper .flex-wrapper .inner-container .chat-wrapper .chat .mybox .mycont {
+              max-width: 50%; }
             .wrapper .flex-wrapper .inner-container .chat-wrapper .chat .mybox .txt {
               margin-right: 20px;
               border: 1px solid #707070;
@@ -341,6 +344,8 @@ body {
           background: #fff;
           border: none;
           height: unset;
+          max-height: 25px;
+          overflow: hidden;
           font-size: 16px;
           border-radius: 35px 0 0 35px;
           padding-left: 15px;
@@ -404,18 +409,19 @@ body {
       top: calc(50% - 8px);
       right: calc(50% - 8px); }
   .wrapper .flex-wrapper .inner-container.show {
-    overflow: unset;
-    top: -5px; }
+    overflow: hidden; }
     .wrapper .flex-wrapper .inner-container.show .searchbar {
-      width: 220%;
-      position: absolute;
-      z-index: 5; }
+      width: 30%;
+      position: fixed;
+      top: 90px;
+      z-index: 5;
+      padding: 11.5px; }
       .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm {
         margin: 5px auto;
         width: 90%;
         height: 30px;
         background: #fff;
-        border-radius: 35px;
+        border-radius: 30px;
         position: relative;
         overflow: hidden;
         cursor: auto; }
@@ -423,7 +429,7 @@ body {
           display: unset;
           position: absolute;
           padding: 8px 0 0 15px;
-          height: 35px;
+          height: 30px;
           width: 100%;
           background: #fff; }
         .wrapper .flex-wrapper .inner-container.show .searchbar .searchbox.sm i {
@@ -443,7 +449,10 @@ body {
 @media (max-width: 550px) {
   .wrapper {
     padding: 0px;
-    height: calc(100vh - 50px); } }
+    height: calc(100vh - 50px); }
+  .wrapper .flex-wrapper .inner-container.show .searchbar {
+    top: 50px;
+    width: 35%; } }
 
 [contenteditable="true"]:empty:before {
   content: attr(placeholder);
